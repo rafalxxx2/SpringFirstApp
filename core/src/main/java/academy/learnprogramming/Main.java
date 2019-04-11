@@ -18,7 +18,7 @@ public class Main {
 
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
-        INumbergenerator InumberGenerator = context.getBean("numberGenerator",INumbergenerator.class);
+        INumbergenerator InumberGenerator = context.getBean(INumbergenerator.class);
 
         //call metgod next() to get a random numebr
 
@@ -29,7 +29,7 @@ public class Main {
         // get game bean from context(container)
         IGame iGame = context.getBean(IGame.class);
 
-        iGame.reset();
+       // iGame.reset();
 
         //close context (container)
 

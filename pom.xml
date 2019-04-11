@@ -16,6 +16,7 @@
             <logback.version>1.2.3</logback.version>
             <spring.version>5.1.6.RELEASE</spring.version>
             <java.version>11</java.version>
+            <annocation-api.version>4.0.1</annocation-api.version>
     </properties>
     <dependencyManagement>
     <dependencies>
@@ -25,6 +26,14 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
 
+        </dependency>
+
+        <!-- Annocation API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${annocation-api.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- spring context -->

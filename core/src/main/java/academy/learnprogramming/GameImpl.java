@@ -2,7 +2,10 @@ package academy.learnprogramming;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GameImpl implements IGame {
 
 
@@ -11,6 +14,7 @@ public class GameImpl implements IGame {
     private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
     // == fields ==
+    @Autowired
     private INumbergenerator iNumbergenerator;
     private int guessCount = 10;
     private int numebr;
@@ -21,12 +25,8 @@ public class GameImpl implements IGame {
     private  boolean validNumberRange = true;
 
 
-    // == constructors ==
-    public GameImpl(INumbergenerator iNumbergenerator) {
-        this.iNumbergenerator = iNumbergenerator;
-    }
+    // == init ==
 
-    // == public methods ==
     @Override
     public void reset() {
         smallest = 0;
@@ -36,6 +36,11 @@ public class GameImpl implements IGame {
         numebr = iNumbergenerator.next();
         log.debug("the number is {}",numebr);
     }
+
+
+
+    // == public methods ==
+
 
 
     @Override
